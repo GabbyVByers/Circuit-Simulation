@@ -24,7 +24,7 @@
     <ClCompile Include="illustrator_members.cpp">
       <Filter>Source Files\Illustrator</Filter>
     </ClCompile>
-    <ClCompile Include="illustrator_voltage.cpp">
+    <ClCompile Include="illustrator_draw.cpp">
       <Filter>Source Files\Illustrator</Filter>
     </ClCompile>
   </ItemGroup>

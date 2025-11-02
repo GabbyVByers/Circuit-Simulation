@@ -11,8 +11,12 @@ int main()
     VoltageSource voltage_source;
     voltage_source.position = Pos2i(25, 10);
     voltage_source.voltage = 6.7;
-    voltage_source.dir = 1;
+    voltage_source.dir = 0;
 
+    Resistor resistor;
+    resistor.position = Pos2i(30, 10);
+    resistor.dir = 0;
+    resistor.resistance = 34.67;
 
     while (window.isOpen()) {
         while (const std::optional event = window.pollEvent()) {
@@ -32,6 +36,7 @@ int main()
         illustrator.pan_screen();
         illustrator.draw_grid();
         illustrator.draw_voltage_source(voltage_source);
+        illustrator.draw_resistor(resistor);
         window.display();
     }
 

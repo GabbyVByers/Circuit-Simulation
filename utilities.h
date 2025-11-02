@@ -47,3 +47,19 @@ public:
     }
 };
 
+class Resistor {
+public:
+    int dir;
+    Pos2i position;
+    double resistance;
+    Node* top_node  = nullptr;
+    Node* bttm_node = nullptr;
+
+    void tick() {
+        if (top_node  == nullptr)
+            return;
+        if (bttm_node == nullptr)
+            return;
+    }
+};
+
