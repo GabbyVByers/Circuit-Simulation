@@ -5,9 +5,10 @@
 class Illustrator {
 public:
     sf::RenderWindow* window = nullptr;
-    float globalx = 0.0f;
-    float globaly = 0.0f;
-    float scale = 0.0f;
+    sf::Font* font = nullptr;
+    float globalx  = 0.0f;
+    float globaly  = 0.0f;
+    float scale    = 0.0f;
 
     // members
     Illustrator(sf::RenderWindow* window, float scale);

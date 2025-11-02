@@ -35,15 +35,15 @@ public:
     int dir;
     Pos2i position;
     double voltage;
-    Node* positive = nullptr;
-    Node* negative = nullptr;
+    Node* positive_node = nullptr;
+    Node* negative_node = nullptr;
 
     void tick() {
-        if (positive == nullptr)
+        if (positive_node == nullptr)
             return;
-        if (negative == nullptr)
+        if (negative_node == nullptr)
             return;
-        positive->voltage = negative->voltage + voltage;
+        positive_node->voltage = negative_node->voltage + voltage;
     }
 };
 

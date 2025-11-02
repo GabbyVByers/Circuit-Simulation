@@ -1,5 +1,9 @@
 
 #include "Illustrator.h"
+#include <sstream>
+#include <string>
+#include <iostream>
+#include <iomanip>
 
 void Illustrator::draw_voltage_source(VoltageSource& vs) {
     float x = globalx + (vs.position.x * scale);
@@ -73,5 +77,20 @@ void Illustrator::draw_voltage_source(VoltageSource& vs) {
         };
         window->draw(&symbols[0], symbols.size(), sf::PrimitiveType::Lines);
     }
+
+    sf::Text text(*font);
+    std::ostringstream oss;
+    oss << std::fixed << std::setprecision(2) << vs.voltage;
+    std::string myString = oss.str();
+    text.setString(oss.str() + "V");
+    text.setCharacterSize(scale * 0.7f);
+    text.setFillColor(sf::Color::White);
+    if ((vs.dir == 0) || (vs.dir == 2)) {
+        text.setPosition(sf::Vector2f(x + (scale * 1.2f), y - (scale * 0.47f)));
+    }
+    else {
+        text.setPosition(sf::Vector2f(x - (text.getLocalBounds().size.x * 0.5f), y - (scale * 2.0f)));
+    }
+    window->draw(text);
 }
 

@@ -11,6 +11,7 @@ int main()
     VoltageSource voltage_source;
     voltage_source.position = Pos2i(25, 10);
     voltage_source.voltage = 6.7;
+    voltage_source.dir = 1;
 
 
     while (window.isOpen()) {

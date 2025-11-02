@@ -6,6 +6,7 @@ Illustrator::Illustrator(sf::RenderWindow* window, float scale) {
     this->scale = scale;
     globalx = scale * 0.5f;
     globaly = scale * 0.5f;
+    font = new sf::Font("arial.ttf");
 }
 
 void Illustrator::zoom_scroll(const sf::Event::MouseWheelScrolled* scroll) {
