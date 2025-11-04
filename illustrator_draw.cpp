@@ -17,22 +17,6 @@ void Illustrator::draw_voltage_source(VoltageSource& voltage_source) {
     body.setPosition(sf::Vector2f(x - scale, y - scale));
     window->draw(body);
 
-    float connection_radius = node_size * scale;
-    sf::CircleShape connection(connection_radius);
-    connection.setFillColor(sf::Color(255, 255, 255));
-    if ((voltage_source.dir == 0) || (voltage_source.dir == 2)) {
-        connection.setPosition(sf::Vector2f(x - connection_radius, y - scale - connection_radius));
-        window->draw(connection);
-        connection.setPosition(sf::Vector2f(x - connection_radius, y + scale - connection_radius));
-        window->draw(connection);
-    }
-    else {
-        connection.setPosition(sf::Vector2f(x - scale - connection_radius, y - connection_radius));
-        window->draw(connection);
-        connection.setPosition(sf::Vector2f(x + scale - connection_radius, y - connection_radius));
-        window->draw(connection);
-    }
-
     if (voltage_source.dir == 0) {
         std::vector<sf::Vertex> symbols = {
             sf::Vertex{sf::Vector2f(x + 0.0f * scale, y - 0.7f * scale)},
@@ -97,22 +81,6 @@ void Illustrator::draw_voltage_source(VoltageSource& voltage_source) {
 void Illustrator::draw_resistor(Resistor& resistor) {
     float x = globalx + (resistor.position.x * scale);
     float y = globaly + (resistor.position.y * scale);
-
-    float connection_radius = node_size * scale;
-    sf::CircleShape connection(connection_radius);
-    connection.setFillColor(sf::Color(255, 255, 255));
-    if (resistor.dir == 0) {
-        connection.setPosition(sf::Vector2f(x - connection_radius, y - scale - connection_radius));
-        window->draw(connection);
-        connection.setPosition(sf::Vector2f(x - connection_radius, y + scale - connection_radius));
-        window->draw(connection);
-    }
-    else {
-        connection.setPosition(sf::Vector2f(x - scale - connection_radius, y - connection_radius));
-        window->draw(connection);
-        connection.setPosition(sf::Vector2f(x + scale - connection_radius, y - connection_radius));
-        window->draw(connection);
-    }
 
     if (resistor.dir == 1) {
         std::vector<sf::Vertex> symbols = {
