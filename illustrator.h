@@ -43,9 +43,9 @@ public:
     void draw_wires();
 
     // selection
-    bool voltage_source_is_selected = true;
-    bool resistor_is_selected = true;
-    bool node_tool_is_selected = true;
+    bool voltage_source_is_selected = false;
+    bool resistor_is_selected = false;
+    bool node_tool_is_selected = false;
     void draw_selection_bar();
     void click_on_component();
     void draw_dummy_voltage_source();

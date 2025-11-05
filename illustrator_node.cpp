@@ -52,5 +52,31 @@ void Illustrator::draw_wires() {
 		wire.push_back(vert2);
 		window->draw(&wire[0], wire.size(), sf::PrimitiveType::LineStrip);
 	}
+
+	for (ScreenWire& curr_wire : wires) {
+		for (ScreenWire& other_wire : wires) {
+			if (&curr_wire == &other_wire) {
+				continue;
+			}
+			float ball_rad = 6.0f;
+			sf::CircleShape ball(ball_rad);
+			if ((curr_wire.start.x == other_wire.start.x) && (curr_wire.start.y == other_wire.start.y)) {
+				ball.setPosition(world_to_screen(curr_wire.start) - sf::Vector2f(ball_rad, ball_rad));
+				window->draw(ball);
+			}
+			if ((curr_wire.end.x == other_wire.start.x) && (curr_wire.end.y == other_wire.start.y)) {
+				ball.setPosition(world_to_screen(curr_wire.end) - sf::Vector2f(ball_rad, ball_rad));
+				window->draw(ball);
+			}
+			if ((curr_wire.start.x == other_wire.end.x) && (curr_wire.start.y == other_wire.end.y)) {
+				ball.setPosition(world_to_screen(curr_wire.start) - sf::Vector2f(ball_rad, ball_rad));
+				window->draw(ball);
+			}
+			if ((curr_wire.end.x == other_wire.end.x) && (curr_wire.end.y == other_wire.end.y)) {
+				ball.setPosition(world_to_screen(curr_wire.end) - sf::Vector2f(ball_rad, ball_rad));
+				window->draw(ball);
+			}
+		}
+	}
 }
 
