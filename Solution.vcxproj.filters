@@ -36,6 +36,9 @@
     <ClCompile Include="illustrator_selection.cpp">
       <Filter>Source Files\Illustrator</Filter>
     </ClCompile>
+    <ClCompile Include="illustrator_placer.cpp">
+      <Filter>Source Files\Illustrator</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="illustrator.h">

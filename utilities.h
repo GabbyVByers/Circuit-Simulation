@@ -48,3 +48,7 @@ public:
     }
 };
 
+struct ScreenWire {
+    sf::Vector2i start;
+    sf::Vector2i end;
+};

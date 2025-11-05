@@ -2,17 +2,27 @@
 
 #include "utilities.h"
 
-struct ScreenWire {
-    sf::Vector2i start;
-    sf::Vector2i end;
-};
-
 class Illustrator {
 public:
     sf::RenderWindow* window = nullptr;
     sf::Font* font = nullptr;
     sf::Vector2f global_origin;
     float scale = 0.0f;
+
+    // componenets
+    std::vector<ScreenWire> wires;
+    std::vector<VoltageSource> voltage_sources;
+    std::vector<Resistor> resistors;
+
+    void run() {
+        pan_screen();
+        draw_grid();
+        manage_new_node();
+        draw_wires();
+        draw_currently_selected_component();
+        draw_all_placed_components();
+        draw_selection_bar();
+    }
 
     // members
     Illustrator(sf::RenderWindow* window, float scale);
@@ -32,7 +42,6 @@ public:
     void draw_ground();
 
     // node
-    std::vector<ScreenWire> wires;
     bool currently_drawing_new_node = false;
     int curr_new_node_direction = 0;
     sf::Vector2i new_node_start;
@@ -51,5 +60,13 @@ public:
     void draw_dummy_voltage_source();
     void draw_dummy_resistor();
     void draw_dummy_wire();
+
+    // placer
+    int curr_voltage_source_direction = 0;
+    int curr_resistor_direction = 0;
+    void draw_currently_selected_component();
+    void rotate_currently_selected_component();
+    void place_currently_selected_component();
+    void draw_all_placed_components();
 };
 
