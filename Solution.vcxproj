@@ -134,6 +134,7 @@
     <ClCompile Include="illustrator_coordinates.cpp" />
     <ClCompile Include="illustrator_members.cpp" />
     <ClCompile Include="illustrator_draw.cpp" />
+    <ClCompile Include="illustrator_node.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>

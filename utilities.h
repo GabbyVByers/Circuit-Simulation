@@ -19,6 +19,7 @@ public:
     int dir;
     sf::Vector2i world_position;
     double voltage;
+    double current;
     Node* positive_node = nullptr;
     Node* negative_node = nullptr;
 
@@ -27,7 +28,6 @@ public:
             return;
         if (negative_node == nullptr)
             return;
-        positive_node->voltage = negative_node->voltage + voltage;
     }
 };
 
@@ -36,6 +36,7 @@ public:
     int dir;
     sf::Vector2i world_position;
     double resistance;
+    double current;
     Node* top_node  = nullptr;
     Node* bttm_node = nullptr;
 

@@ -24,7 +24,10 @@ int main() {
                 window.close();
             }
             if (event->is<sf::Event::MouseButtonPressed>()) {
-
+                illustrator.begin_new_node();
+            }
+            if (event->is<sf::Event::MouseButtonReleased>()) {
+                illustrator.confirm_new_node();
             }
             if (const auto* scroll = event->getIf<sf::Event::MouseWheelScrolled>()) {
                 illustrator.zoom_scroll(scroll);
@@ -36,15 +39,15 @@ int main() {
         }
 
         window.clear(sf::Color::Black);
+
         illustrator.pan_screen();
         illustrator.draw_grid();
+        illustrator.manage_new_node();
+        illustrator.draw_wires();
         illustrator.draw_voltage_source(voltage_source);
         illustrator.draw_resistor(resistor);
 
-        sf::CircleShape testPoint(10.0f);
-        sf::Vector2f screen_pos_mouse = illustrator.get_screen_pos_mouse();
-        testPoint.setPosition(sf::Vector2f(screen_pos_mouse.x - 10.0f, screen_pos_mouse.y - 10.0f));
-        window.draw(testPoint);
+        std::cout << illustrator.wires.size() << "\n";
 
         window.display();
     }
