@@ -33,7 +33,6 @@ public:
 
     // node
     std::vector<ScreenWire> wires;
-    bool node_tool_is_selected = true;
     bool currently_drawing_new_node = false;
     int curr_new_node_direction = 0;
     sf::Vector2i new_node_start;
@@ -42,5 +41,15 @@ public:
     void manage_new_node();
     void confirm_new_node();
     void draw_wires();
+
+    // selection
+    bool voltage_source_is_selected = true;
+    bool resistor_is_selected = true;
+    bool node_tool_is_selected = true;
+    void draw_selection_bar();
+    void click_on_component();
+    void draw_dummy_voltage_source();
+    void draw_dummy_resistor();
+    void draw_dummy_wire();
 };
 

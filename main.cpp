@@ -24,6 +24,7 @@ int main() {
                 window.close();
             }
             if (event->is<sf::Event::MouseButtonPressed>()) {
+                illustrator.click_on_component();
                 illustrator.begin_new_node();
             }
             if (event->is<sf::Event::MouseButtonReleased>()) {
@@ -46,6 +47,7 @@ int main() {
         illustrator.draw_wires();
         illustrator.draw_voltage_source(voltage_source);
         illustrator.draw_resistor(resistor);
+        illustrator.draw_selection_bar();
 
         std::cout << illustrator.wires.size() << "\n";
 

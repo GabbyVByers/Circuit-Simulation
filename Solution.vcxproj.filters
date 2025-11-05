@@ -33,6 +33,9 @@
     <ClCompile Include="illustrator_node.cpp">
       <Filter>Source Files\Illustrator</Filter>
     </ClCompile>
+    <ClCompile Include="illustrator_selection.cpp">
+      <Filter>Source Files\Illustrator</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="illustrator.h">
