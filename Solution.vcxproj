@@ -131,6 +131,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="illustrator_coordinates.cpp" />
     <ClCompile Include="illustrator_members.cpp" />
     <ClCompile Include="illustrator_draw.cpp" />
     <ClCompile Include="main.cpp" />

@@ -9,22 +9,6 @@
 #include <iostream>
 #include <vector>
 
-class Pos2i {
-public:
-	int x = 0;
-	int y = 0;
-
-	Pos2i() {
-		x = 0;
-		y = 0;
-	}
-
-	Pos2i(int x, int y) {
-		this->x = x;
-		this->y = y;
-	}
-};
-
 class Node {
 public:
     double voltage;
@@ -33,7 +17,7 @@ public:
 class VoltageSource {
 public:
     int dir;
-    Pos2i position;
+    sf::Vector2i world_position;
     double voltage;
     Node* positive_node = nullptr;
     Node* negative_node = nullptr;
@@ -50,7 +34,7 @@ public:
 class Resistor {
 public:
     int dir;
-    Pos2i position;
+    sf::Vector2i world_position;
     double resistance;
     Node* top_node  = nullptr;
     Node* bttm_node = nullptr;

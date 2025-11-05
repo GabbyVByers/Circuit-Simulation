@@ -27,6 +27,9 @@
     <ClCompile Include="illustrator_draw.cpp">
       <Filter>Source Files\Illustrator</Filter>
     </ClCompile>
+    <ClCompile Include="illustrator_coordinates.cpp">
+      <Filter>Source Files\Illustrator</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="illustrator.h">
